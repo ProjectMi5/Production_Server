@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="FB_OPCWrite" Id="{477a401f-4cd0-42f5-895e-954fe30fea27}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OPCWrite
+VAR_INPUT
+	execute	:	BOOL;
+END_VAR
+VAR_OUTPUT
+	
+    Busy    : BOOL;
+    Error    : BOOL;
+    ErrorID    : DWORD;
+	Done    : BOOL;
+END_VAR
+VAR
+	fbwrite: UA_Write;
+	state: INT	:=	0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF execute THEN
+	CASE state OF
+		0: Done := FALSE;
+			fbwrite(
+			Execute:= FALSE,
+			ConnectionHdl:=myConnectHdl,
+			NodeHdl:=MyNodeHdl,
+			stNodeAddInfo:=,
+			pVariable:=x,
+			cbData:=MycbData,
+			Timeout:=mytimeout,
+			Done=>done,
+			Busy=>busy,
+			Error=>Error,
+			ErrorID=>,);
+			state:=1;
+			
+		1: fbwrite(
+			 execute:= TRUE,
+			 ConnectionHdl:=myConnectHdl,
+			 NodeHdl:=MyNodeHdl,
+			 stNodeAddInfo:=,
+			 pVariable:=x,
+			 cbData:=MycbData,
+			 Timeout:=mytimeout,
+			 Done=>done,
+			 Busy=>busy,
+			 Error=>error,
+			 ErrorID=>,);
+			 IF NOT Busy THEN
+				 execute:= FALSE;
+				 state:= 0;
+			 END_IF
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

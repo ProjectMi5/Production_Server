@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <GVL Name="MI5" Id="{f7c42ae6-b8b3-4b13-9acf-f4bd9d23ea63}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	(*{attribute 'OPC.UA.DA' := '1'}
+	oldModule2401 : DUT_SERVER_MODULE_INTERFACE;
+		{attribute 'OPC.UA.DA' := '1'}
+	oldModule2402 : DUT_SERVER_MODULE_INTERFACE;
+	{attribute 'OPC.UA.DA' := '1'}
+	oldProductionList		: ARRAY [0..TaskCnt] OF DUT_SERVER_TASK;
+	{attribute 'OPC.UA.DA' := '1'}
+	oldRecipe			: ARRAY [0..OfferCnt] OF DUT_RECIPEOFFER;
+	{attribute 'OPC.UA.DA' := '1'}
+	oldOrder			: ARRAY [0..OrderCnt] OF DUT_RECIPEORDER;
+	*)
+	{attribute 'OPC.UA.DA' := '1'}
+	ProductionList	: ARRAY [0..TaskCnt] OF DUT_TASK;
+	{attribute 'OPC.UA.DA' := '1'}
+	Recipe			: ARRAY [0..OfferCnt] OF DUT_RECIPE_OFFER;
+	{attribute 'OPC.UA.DA' := '1'}
+	Order			: ARRAY [0..OrderCnt] OF DUT_RECIPEORDER;
+		{attribute 'OPC.UA.DA' := '1'}
+	MessageFeed		: ARRAY [0..MessagefeedCnt] OF DUT_MESSAGEFEED;
+			{attribute 'OPC.UA.DA' := '1'}
+	Module2401Manual	: DUT_MANUALMODULE;
+				{attribute 'OPC.UA.DA' := '1'}
+	Module2402Manual	: DUT_MANUALMODULE;
+				{attribute 'OPC.UA.DA' := '1'}
+	Module2403Manual	: DUT_MANUALMODULE;
+	{attribute 'OPC.UA.DA' := '1'}
+	Module2501			: DUT_SERVER_MODULE_INTERFACE;
+	{attribute 'OPC.UA.DA' := '1'}
+	Module2601			: DUT_SERVER_MODULE_INTERFACE;
+END_VAR
+]]></Declaration>
+    <ObjectProperties />
+  </GVL>
+</TcPlcObject>

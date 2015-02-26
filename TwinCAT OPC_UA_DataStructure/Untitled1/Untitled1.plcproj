@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0755d13a-9b9b-4091-812c-359edf06bc00}</ProjectGuid>
+    <Name>Untitled1</Name>
+    <ProgramVersion>3.1.0.8</ProgramVersion>
+    <Application>{03d168b0-b40c-4bf2-91c0-26de659e5cf5}</Application>
+    <TypeSystem>{7b5eecc0-00ef-4638-aee3-c8e9c5b07c6f}</TypeSystem>
+    <Implicit_Task_Info>{ba7c8842-37ea-46ae-9f07-a993f93d469e}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{3e688cab-aad7-4a87-8c12-e373d3ed9281}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{fbdc8be3-05a2-4195-9d03-786b90cb48be}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{e7f316d0-9a54-4792-acbd-811f9b0fb617}</LibraryReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DUTs\ManualModule\DUT_MANUALMODULE_PARAMETER.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ManualModule\DUT_MANUALMODULE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\MessageFeed\DUT_MESSAGEFEED.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\DUT_MODULE_INTERFACE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Input\DUT_MODE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Input\DUT_MODULE_INTERFACE_INPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Input\DUT_PARAMETER_INPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Input\DUT_SKILL_INPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Output\DUT_MODULE_INTERFACE_OUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Output\DUT_PARAMETER_OUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Output\DUT_SKILL_OUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Module Interface\Output\DUT_STATEVALUES.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Production List\DUT_PARAMETER.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Production List\DUT_SKILL.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Production List\DUT_TASK.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Production List\DUT_TASKSTATE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Queue\DUT_RECIPEORDER.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Queue\DUT_RECIPE_USERPARAMETERINPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\RecipeOffer\DUT_RECIPE_OFFER.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\RecipeOffer\DUT_RECIPE_USERPARAMETEROUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_MODULE_INTERFACE.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_MODULE_INTERFACE_INPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_MODULE_INTERFACE_OUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_PARAMETERINPUTARRAY.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_PARAMETEROUTPUTARRAY.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_SKILLINPUTARRAY.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_SKILLOUTPUTARRAY.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_SKILL_INPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_SKILL_OUTPUT.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Server DUTs\DUT_SERVER_STATEVALUEARRAY.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\MI5.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\OpcServerConstants.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FakeHandModule\FB_Fake2401.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="DUTs\Module Interface" />
+    <Folder Include="DUTs\Module Interface\Input" />
+    <Folder Include="DUTs\Module Interface\Output" />
+    <Folder Include="DUTs\MessageFeed" />
+    <Folder Include="DUTs\ManualModule" />
+    <Folder Include="DUTs\Queue" />
+    <Folder Include="DUTs\RecipeOffer" />
+    <Folder Include="DUTs\Production List" />
+    <Folder Include="DUTs\Server DUTs\" />
+    <Folder Include="GVLs" />
+    <Folder Include="POUs\FakeHandModule\" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Interfaces">
+      <DefaultResolution>Tc3_Interfaces, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Interfaces</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_PLCopen_OpcUa">
+      <DefaultResolution>Tc3_PLCopen_OpcUa, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_PLCopen_OpcUa</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Untitled1.tmc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ProjectExtensions />
+</Project>

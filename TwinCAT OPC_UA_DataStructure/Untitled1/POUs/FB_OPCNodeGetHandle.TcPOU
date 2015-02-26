@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="FB_OPCNodeGetHandle" Id="{356da62e-e90f-45a3-9f1c-c2aca3830ad3}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OPCNodeGetHandle
+VAR_INPUT
+	execute: BOOL;
+END_VAR
+VAR_OUTPUT
+	Done: BOOL;
+	Busy: BOOL;
+	Error: BOOL;
+END_VAR
+VAR
+	FBOPCNodeGetHandle: UA_NodeGetHandle;
+	state: INT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF execute THEN
+	CASE state OF 
+		0: 
+			FBOPCNodeGetHandle(		
+            Execute:= FALSE,
+			ConnectionHdl:=myConnectHdl,
+			NodeID:=mySesionNodeID,
+			Timeout:=mytimeout,
+			NodeHdl=>myNodeHdl,
+			Done=>done,
+			Busy=>busy,
+			Error=>error,
+			ErrorID=> );
+			state  :=	1;
+			
+		1:
+			FBOPCNodeGetHandle(		
+            Execute:= TRUE,
+			ConnectionHdl:=myConnectHdl,
+			NodeID:=mySesionNodeID,
+			Timeout:=mytimeout,
+			NodeHdl=>myNodeHdl,
+			Done=>done,
+			Busy=>busy,
+			Error=>error,
+			ErrorID=> );
+			IF NOT busy THEN
+			Execute := FALSE;
+			state := 0;	
+			END_IF
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

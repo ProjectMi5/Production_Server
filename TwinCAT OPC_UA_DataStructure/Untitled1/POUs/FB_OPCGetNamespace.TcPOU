@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="FB_OPCGetNamespace" Id="{54043fbf-6ed5-458f-ba20-984898d74c07}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OPCGetNameSpace
+VAR_INPUT
+	execute: BOOL;
+END_VAR
+VAR_OUTPUT
+	Done: BOOL;
+	Busy: BOOL;
+	Error: BOOL;
+END_VAR
+VAR
+	FBGetNameSpace: UA_GetNameSpaceIndex;
+	state: INT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF execute THEN
+	CASE state OF 
+		0:	
+			FBGetNameSpace(
+			Execute:= FALSE, 
+			ConnectionHdl:= myConnectHdl, 
+			NamespaceUri:= myNamespaceUri, 
+			Timeout:= mytimeout, 
+			NamespaceIndex=> , 
+			Done=>done , 
+			Busy=>busy , 
+			Error=>error , 
+			ErrorID=> );
+			
+			state	:=	1;
+			
+		1:	
+			FBGetNameSpace(
+			Execute:= TRUE, 
+			ConnectionHdl:= myConnectHdl, 
+			NamespaceUri:=myNamespaceUri, 
+			Timeout:= mytimeout, 
+			NamespaceIndex=>myNamespaceindex , 
+			Done=> done, 
+			Busy=> busy, 
+			Error=> error, 
+			ErrorID=> );
+			IF NOT busy THEN
+			Execute := FALSE;
+			state := 0;	
+		    END_IF
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

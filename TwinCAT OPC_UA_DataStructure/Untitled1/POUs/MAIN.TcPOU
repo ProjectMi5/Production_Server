@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="MAIN" Id="{ffaf2c03-b6e7-40fc-a73a-7830d7bb7ff7}">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	sizeOfTask : INT;
+	sizeOfRecipeOffer : INT;
+	sizeOfRecipeOrder: INT;
+	simulateHandModule	: FB_Fake2401;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//OPCMODULE[1].Input.ConnectionTestInput:= OPCModule[1].Output.ConnectionTestOutput;
+sizeOfTask := SIZEOF(MI5.ProductionList[0]);
+sizeOfRecipeOffer := SIZEOF(MI5.Recipe[0]);
+sizeOfRecipeOrder := SIZEOF(MI5.Order[0]);
+
+simulateHandModule(position := 202.2, ManualModule := Module2401Manual); ]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

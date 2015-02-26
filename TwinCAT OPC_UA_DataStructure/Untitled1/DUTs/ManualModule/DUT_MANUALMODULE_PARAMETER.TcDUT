@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <DUT Name="DUT_MANUALMODULE_PARAMETER" Id="{c1cd87d9-9fbd-47ac-bfa6-57723b121c86}">
+    <Declaration><![CDATA[TYPE DUT_MANUALMODULE_PARAMETER :
+STRUCT
+	Name: STRING(80);
+	ID: UINT;
+	Unit: STRING(80);
+	Value: LREAL;
+	StringValue: STRING(80);
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

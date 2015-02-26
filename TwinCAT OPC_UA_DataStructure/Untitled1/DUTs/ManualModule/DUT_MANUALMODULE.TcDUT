@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <DUT Name="DUT_MANUALMODULE" Id="{7f5e819a-91ec-4588-9c76-bbb57354bb60}">
+    <Declaration><![CDATA[TYPE DUT_MANUALMODULE :
+STRUCT
+	SkillDescription: STRING(80);
+	SkillID: UINT;
+	TaskID: UINT;
+	Ready: BOOL;
+	Busy: BOOL;
+	Done: BOOL;
+	Execute: BOOL;
+	Error: BOOL;
+	ErrorID: UINT;
+	Position: LREAL;
+	Parameter: ARRAY[0..ParameterCnt] OF DUT_MANUALMODULE_PARAMETER;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+    <ObjectProperties />
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="FB_Fake2401" Id="{a7776e10-4cd8-42e0-8e6b-755b640ff687}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Fake2401
+VAR_INPUT
+	execute	: BOOL := TRUE;
+	position	: LREAL := 202.02;
+	Autotime	: TIME := T#5S;
+END_VAR
+VAR_IN_OUT
+	ManualModule	: DUT_MANUALMODULE;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Autotimer	: TON;
+	state : INT;
+	
+	userexecute		: BOOL;
+	userdone		: BOOL;
+	UserSkillName	: STRING[80];
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF execute THEN
+	
+	CASE state OF
+		
+	0: 
+		
+		ManualModule.Error 		:= FALSE;
+		ManualModule.Position 	:= position;
+		ManualModule.Done		:= FALSE;
+		ManualModule.Ready		:= TRUE;
+		
+		IF ManualModule.Execute THEN
+			state := 10;
+			ManualModule.Ready		:= FALSE;
+			ManualModule.Busy		:= TRUE;
+			Autotimer(IN := FALSE);
+		END_IF
+		
+	10: Autotimer(IN := TRUE, PT := Autotime);
+		IF Autotimer.Q THEN
+			userdone := TRUE;
+		END_IF
+		userexecute := TRUE;
+		userskillname := ManualModule.SkillDescription;
+		IF userdone THEN
+			ManualModule.Done := TRUE;
+			ManualModule.busy := FALSE;
+			state := 20;
+		END_IF
+		
+	20:
+		IF NOT ManualModule.Execute THEN
+			state := 0;
+			userdone := FALSE;
+			ManualModule.Done := FALSE;
+		END_IF
+	
+	
+	
+	
+	
+	END_CASE
+END_IF]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

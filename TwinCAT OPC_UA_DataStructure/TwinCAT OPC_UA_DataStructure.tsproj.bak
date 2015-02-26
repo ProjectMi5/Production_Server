@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0">
+	<Project ProjectGUID="{9E6BB13B-9D80-4419-92BD-66056B014EF1}" ModifiedGUID="{25A51436-AE37-41EE-80E9-0EA630CE7C93}" Target64Bit="true" AutoPrioManagement="true">
+		<System>
+			<Settings MaxCpus="2"/>
+			<Licenses>
+				<Target>
+					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="2" Priority="4" CycleTime="50000" AmsPort="350">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{0755D13A-9B9B-4091-812C-359EDF06BC00}" Name="Untitled1" PrjFilePath="Untitled1\Untitled1.plcproj" TmcFilePath="Untitled1\Untitled1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false">
+				<Instance Id="#x01010010" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Untitled1 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

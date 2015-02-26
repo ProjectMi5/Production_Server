@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <POU Name="FB_OPCConnect" Id="{868b4674-0e17-4229-866b-cacf0e1bc1ae}">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OPCConnect
+VAR_INPUT
+	execute: BOOL;
+END_VAR
+VAR_OUTPUT
+	busy: BOOL;
+	error: BOOL;
+	done: BOOL;
+END_VAR
+VAR
+	fbConnect: UA_Connect;
+	state: INT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF execute THEN
+	CASE state OF
+	0:
+         fbConnect(
+			Execute:= FALSE, 
+			ServerUrl:=myServerUrl , 
+			SessionConnectInfo:= mySesionconnectInfo, 
+			Timeout:= mytimeout, 
+			ConnectionHdl=> myConnectHdl, 
+			Done=>done , 
+			Busy=>busy , 
+			Error=>error , 
+			ErrorID=> );
+	
+	     state := 1;
+	
+
+	1:
+         fbConnect(
+			Execute:= TRUE, 
+			ServerUrl:=myServerUrl , 
+			SessionConnectInfo:= mySesionconnectInfo, 
+			Timeout:= mytimeout, 
+			ConnectionHdl=> myConnectHdl,  
+			Done=> done, 
+			Busy=> busy, 
+			Error=>error, 
+			ErrorID=> );
+		IF NOT busy THEN
+			Execute := FALSE;
+			state := 0;
+			
+		END_IF
+ END_CASE
+END_IF
+]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>

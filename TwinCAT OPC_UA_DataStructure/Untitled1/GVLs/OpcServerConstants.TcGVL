@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.25">
+  <GVL Name="OpcServerConstants" Id="{99b5a6d1-97eb-4f01-9d06-4ba95a4efff6}">
+    <Declaration><![CDATA[VAR_GLOBAL CONSTANT
+	
+	ParameterCnt 	: INT := 5;					(*Maximum number of skillparameters*)
+	SkillCnt		: INT := 15;				(*Maximum number of skills per Module*)
+	StateCnt		: INT := 10;				(*Maximum number of Statevalues of one Module*)
+	ModuleCnt		: INT := 10;				(*Maximum number of modules*)
+	TaskCnt			: INT := 30;				(*Maximum number of Tasks in Production List*)
+	OfferCnt		: INT := 30;                 (*Maximum number  *)   
+	OrderCnt		: INT := 5;                       
+	UserParameterCnt: INT := 5;					(*Number of user set parameters per recipe*)
+	TaskSkillCnt	: INT := 50;				(*Number of skills per task*)
+	MessagefeedCnt  : INT := 100;
+	
+END_VAR
+]]></Declaration>
+    <ObjectProperties />
+  </GVL>
+</TcPlcObject>
